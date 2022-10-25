@@ -27,6 +27,9 @@ export class CartService {
       this.setCartToLocalStorage();
 
   }
+  getCart():Cart{
+    return this.cartSubject.value
+  }
 
   changeQuantity(foodId:string, quantity:number){
     let cartItem = this.cart.items.find(item=>

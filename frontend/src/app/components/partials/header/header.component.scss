@@ -51,6 +51,7 @@ a span{
 }
 .menu-container:hover .menu{
     display: block;
+    z-index:10000;
 }
 .menu a{
     width: 100%;

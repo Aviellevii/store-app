@@ -4,14 +4,14 @@
         <nav>
             <ul>
                 <li>
-                    <a routerLink="/login">Login</a>
+                    <a routerLink="/login" *ngIf="!IsAuth">Login</a>
                 </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard">John</a>
-                    <div class="menu">
+                <li class="menu-container" *ngIf="IsAuth">
+                    <a routerLink="/dashboard">{{user.name}}</a>
+                    <div class="menu" >
                         <a routerLink="/profile">Profile</a>
                         <a routerLink="/orders">Orders</a>
-                        <a>Logout</a>
+                        <a (click)="logout()">Logout</a>
                     </div>
                 </li>
                 <li>
